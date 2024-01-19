@@ -1,0 +1,229 @@
+body {
+  padding: 0;
+  margin: 0;
+  font-family: arial;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  margin: 3rem 0 0 0;
+  text-transform: uppercase;
+  color: #e7e7e7;
+  text-shadow: 1.5px 1.5px 0 #333, 0px 1.5px 0 #333, -1.5px -1.5px 0 #333, -1.5px -1.5px 0 #333, -1.5px 1.5px 0 #333, 1.5px -1.5px 0 #333, 0.7778174593px 0.7778174593px 0 #aaaaaa, 1.5556349186px 1.5556349186px 0 #aaaaaa,
+    2.3334523779px 2.3334523779px 0 #aaaaaa, 3.1112698372px 3.1112698372px 0 #aaaaaa, 3.8890872965px 3.8890872965px 0 #aaaaaa, 4.6669047558px 4.6669047558px 0 #aaaaaa, 5.4447222151px 5.4447222151px 0 #aaaaaa,
+    6.2225396744px 6.2225396744px 0 #aaaaaa, 7.0003571337px 7.0003571337px 0 #aaaaaa, 7.7781745931px 7.7781745931px 0 #aaaaaa;
+}
+
+.box {
+  margin: auto;
+  padding: 0 20px;
+  position: relative;
+  background-color: grey;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.area-komputer {
+  width: 80%;
+  height: 250px;
+  margin: 5px auto;
+  background-color: goldenrod;
+  background: linear-gradient(to bottom, rgb(255, 220, 64) 0%, rgb(207, 190, 31) 100%);
+  position: relative;
+  border-radius: 40px 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.area-komputer span,
+.area-player span {
+  position: absolute;
+  font-weight: bolder;
+  font-size: 1rem;
+  color: white;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+}
+
+.area-player {
+  width: 80%;
+  height: 230px;
+  background-color: lightgreen;
+  background: linear-gradient(to bottom, rgba(210, 255, 82, 1) 0%, rgba(145, 232, 66, 1) 100%);
+  position: relative;
+  border-radius: 0 0 40px 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.versus {
+  position: absolute;
+  text-align: center;
+  color: #ffffff;
+  font-size: 3rem;
+  text-shadow: -2px -2px 0 darkred, 2px -2px 0 darkred, -2px 2px 0 darkred, 2px 2px 0 darkred;
+  z-index: 1;
+  margin-top: 1rem;
+}
+
+.info {
+  display: none;
+  padding: 0 2rem;
+  border: 5px solid lightskyblue;
+  position: absolute;
+  top: 45%;
+  background-color: white;
+  border-radius: 30px;
+  z-index: 2;
+  text-align: center;
+  line-height: 60px;
+  color: goldenrod;
+  font-size: 26px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  animation: muncul 0.3s ease-in-out;
+}
+
+.area-player img,
+.area-komputer img {
+  margin: auto;
+  border-radius: 50%;
+}
+
+.area-komputer img {
+  width: 25%;
+}
+
+.area-player img {
+  width: 20%;
+}
+
+.paper,
+.rock,
+.scissors {
+  transition: 0.3s;
+  position: relative;
+  top: 0;
+  cursor: pointer;
+}
+
+.paper:hover,
+.rock:hover,
+.scissors:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px 5px limegreen;
+}
+
+.paper:active,
+.rock:active,
+.scissors:active {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px 5px limegreen;
+}
+
+.hadiah {
+  width: 100%;
+  height: 100vh;
+  z-index: 9;
+  position: absolute;
+  display: none;
+  animation: muncul 0.3s ease-in-out;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  background-color: #000000f1;
+}
+
+.container-hadiah {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hadiah h1 {
+  padding-bottom: 0.5rem;
+  animation: kedip 0.5s infinite;
+}
+
+.hadiah .close-btn {
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.hadiah .buka-hadiah {
+  margin: 5px 5px;
+  cursor: pointer;
+  position: relative;
+  bottom: 3rem;
+  animation: kedip 0.3s infinite;
+  border-radius: 0.3rem;
+}
+
+.hadiah .buka-hadiah:hover {
+  background-color: green;
+  color: #aaaaaa;
+}
+
+.prank {
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  z-index: 999;
+  overflow: hidden;
+  justify-content: center;
+}
+
+@keyframes muncul {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes kedip {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .container-hadiah {
+    width: 70%;
+  }
+
+  .prank img {
+    width: 100%;
+  }
+}

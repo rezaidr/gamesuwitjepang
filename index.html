@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game suit</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Game Suit</h1>
+      <div class="box">
+        <div class="area-komputer">
+          <span>COMPUTER</span>
+          <img src="img/paper.jpg" class="img-computer" />
+        </div>
+        <div class="versus">VS</div>
+        <div class="info"></div>
+        <div class="area-player">
+          <span>PLAYER</span>
+
+          <img src="img/paper.jpg" class="paper" />
+
+          <img src="img/rock.jpg" class="rock" />
+
+          <img src="img/scissors.jpg" class="scissors" />
+        </div>
+      </div>
+    </div>
+
+    <div class="hadiah">
+      <div class="container-hadiah">
+        <button class="close-btn">x</button>
+        <h1>SELAMAT ANDA MENANG!!</h1>
+        <img src="img/giphy.gif" alt="" width="70%" />
+        <button class="buka-hadiah">BUKA HADIAH KLIK DISINI!!</button>
+      </div>
+    </div>
+
+    <div class="prank">
+      <img src="img/jumpscare.gif" alt="" width="50%" />
+    </div>
+
+    <audio id="jumpscare-audio">
+      <source src="audio/JumpscareSound.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="menang-audio">
+      <source src="audio/audioMenang.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="kalah-audio">
+      <source src="audio/audioKalah.mp3" type="audio/mp3" />
+    </audio>
+
+    <script src="script.js"></script>
+  </body>
+</html>
