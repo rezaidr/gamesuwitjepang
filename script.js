@@ -32,7 +32,7 @@ function putar() {
 }
 
 // menangkap hasil
-addPoin = 0;
+let addPoin = 0;
 let isKlikDiizinkan = true;
 
 const pilihan = document.querySelectorAll(".area-player img");
@@ -87,7 +87,7 @@ pilihan.forEach(function (pilih) {
           score.innerText = "Score:" + " " + addPoin;
           hadiah.style.display = "flex";
           audioMenang.play();
-        } else if (hasil == "KALAH!" && addPoin >= 0) {
+        } else if (hasil == "KALAH!" && addPoin >= 1) {
           addPoin -= 1;
           score.innerText = "Score:" + " " + addPoin;
         }
