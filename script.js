@@ -32,11 +32,17 @@ function putar() {
 }
 
 // menangkap hasil
+addPoin = 0;
 let isKlikDiizinkan = true;
 
 const pilihan = document.querySelectorAll(".area-player img");
 pilihan.forEach(function (pilih) {
   pilih.addEventListener("click", function () {
+    pilihan.forEach(function (img) {
+      if (img !== pilih) {
+        img.style.opacity = "0";
+      }
+    });
     if (isKlikDiizinkan) {
       isKlikDiizinkan = false;
       const pilihanComp = getPilihanComputer();
@@ -56,29 +62,47 @@ pilihan.forEach(function (pilih) {
 
       // mengubah vs menjadi info
       setTimeout(function () {
+        const audioKalah = document.getElementById("kalah-audio");
         const versus = document.querySelector(".versus");
         const info = document.querySelector(".info");
         info.innerHTML = hasil;
         info.style.display = "inherit";
         versus.style.display = "none";
+        if (hasil == "KALAH!") {
+          audioKalah.play();
+          audioKalah.currentTime = 0.4;
+        }
       }, 1500);
 
       // memutar audio & memunculkan hadiah berdasarkan info
       setTimeout(function () {
         const hadiah = document.querySelector(".hadiah");
         const audioMenang = document.getElementById("menang-audio");
-        const audioKalah = document.getElementById("kalah-audio");
+        let score = document.getElementById("score");
 
         if (hasil == "MENANG!") {
+          addPoin += 1;
+          score.innerText = "Score:" + " " + addPoin;
           hadiah.style.display = "flex";
           audioMenang.play();
-          isKlikDiizinkan = true;
-        } else {
-          audioKalah.play();
-          audioKalah.currentTime = 0.4;
-          isKlikDiizinkan = true;
+        } else if (hasil == "KALAH!" && addPoin >= 0) {
+          addPoin -= 1;
+          score.innerText = "Score:" + " " + addPoin;
         }
-      }, 2500);
+      }, 3000);
+
+      // kembalikan tampilan
+      setTimeout(function () {
+        const imgComputer = document.querySelector(".img-computer");
+        imgComputer.setAttribute("src", "img/questionmark.jpg");
+        info.style.display = "none";
+        versus.style.display = "inherit";
+        isKlikDiizinkan = true;
+
+        pilihan.forEach(function (img) {
+          img.style.opacity = "1";
+        });
+      }, 3500);
     }
   });
 });
@@ -113,3 +137,12 @@ pilihan.forEach(function (pilih) {
     pilih.style.animation = "nyala 1s infinite";
   });
 });
+
+// let score = document.getElementById("score");
+// let addPoin = 0;
+
+// function test() {
+//   addPoin += 1;
+//   console.log(score, "score:" + addPoin);
+//   score.innerHTML = "score:" + addPoin;
+// }
