@@ -50,8 +50,10 @@ pilihan.forEach(function (pilih) {
       const hasil = getHasil(pilihanComp, pilihanPlayer);
       const info = document.querySelector(".info");
       const versus = document.querySelector(".versus");
+      const copyright = document.getElementById("copyright");
       versus.style.display = "inherit";
       info.style.display = "none";
+      copyright.style.display = "none";
 
       putar();
 
@@ -79,12 +81,10 @@ pilihan.forEach(function (pilih) {
         const hadiah = document.querySelector(".hadiah");
         const audioMenang = document.getElementById("menang-audio");
         let score = document.getElementById("score");
-        let copyright = document.getElementById("copyright");
 
         if (hasil == "MENANG!") {
           addPoin += 1;
           score.innerText = "Score:" + " " + addPoin;
-          copyright.style.display = "none";
           hadiah.style.display = "flex";
           audioMenang.play();
         } else if (hasil == "KALAH!" && addPoin >= 0) {
@@ -139,12 +139,3 @@ pilihan.forEach(function (pilih) {
     pilih.style.animation = "nyala 1s infinite";
   });
 });
-
-// let score = document.getElementById("score");
-// let addPoin = 0;
-
-// function test() {
-//   addPoin += 1;
-//   console.log(score, "score:" + addPoin);
-//   score.innerHTML = "score:" + addPoin;
-// }
