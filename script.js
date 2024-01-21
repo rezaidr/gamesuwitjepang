@@ -79,10 +79,12 @@ pilihan.forEach(function (pilih) {
         const hadiah = document.querySelector(".hadiah");
         const audioMenang = document.getElementById("menang-audio");
         let score = document.getElementById("score");
+        let copyright = document.getElementById("copyright");
 
         if (hasil == "MENANG!") {
           addPoin += 1;
           score.innerText = "Score:" + " " + addPoin;
+          copyright.style.display = "none";
           hadiah.style.display = "flex";
           audioMenang.play();
         } else if (hasil == "KALAH!" && addPoin >= 0) {

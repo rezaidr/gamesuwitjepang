@@ -220,7 +220,6 @@ h1 {
 
 .copyright {
   width: 100%;
-  height: 3rem;
   background-color: #e7e7e7;
   display: flex;
   align-items: center;
@@ -228,7 +227,7 @@ h1 {
 }
 
 .copyright p {
-  animation: movetoright 15s linear infinite;
+  animation: movetoright 10s linear infinite;
 }
 
 @keyframes movetoright {
